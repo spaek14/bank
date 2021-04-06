@@ -5,7 +5,11 @@ class Statement
     end
 
     def statementify
-        names + "\n" + "hello"
+        if @transactions.empty?
+            return names
+        else
+            return names + "\n" + @transactions.map { |x| "#{x.date} || #{x.credit} || #{x.debit} || #{x.after_balance}"}.join("\n")
+        end
     end
 
 private
