@@ -32,12 +32,12 @@ describe Transaction do
 
         it "if amount is +x, debit = 0" do
             transaction = Transaction.new(before_balance = 0, amount = 10)
-            expect(transaction.debit).to eq(0)
+            expect(transaction.debit).to eq("")
         end
 
         it "if amount is -x, credit = 0" do
             transaction = Transaction.new(before_balance = 0, amount = -10)
-            expect(transaction.credit).to eq(0)
+            expect(transaction.credit).to eq("")
         end
 
         it "if amount is 0, raise error" do

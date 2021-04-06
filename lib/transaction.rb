@@ -5,12 +5,12 @@ class Transaction
         @date = Time.now.strftime('%d/%m/%y')
         @before_balance = before_balance
         @after_balance = before_balance + amount
-        @credit = 0
-        @debit = 0
+        @credit = ""
+        @debit = ""
         if amount.positive? 
-            @credit += amount
+            @credit = amount
         elsif amount != 0
-            @debit -= amount
+            @debit = -amount
         else raise "cannot process value of 0"
         end
     end

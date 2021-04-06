@@ -15,8 +15,6 @@ class Bank
         @balance -= money
     end
 
-private
-
     def valid?(money)
         money_int = money.is_a? Integer
         money_float = money.is_a? Float
