@@ -76,7 +76,19 @@ let(:bank) { Bank.new }
             bank = Bank.new
             bank.deposit(1000)
             bank.withdraw(200)
-            expect { bank.statement }.to output("date || credit || debit || balance\n07/04/21 || 1000 ||  || 1000\n07/04/21 ||  || 200 || 800\n").to_stdout
+            expect { bank.statement }.to output("date || credit || debit || balance\n07/04/21 ||  || 200.00 || 800.00\n07/04/21 || 1000.00 ||  || 1000.00\n").to_stdout
+        end
+    end
+
+    context "Acceptance Criteria" do
+        let(:transaction1) { double :transaction1, date: '10/01/2012', credit: '%.2f' % 1000.00, debit: nil, before_balance: '%.2f' % 0.00, after_balance: '%.2f' % 1000.00 }
+        let(:transaction2) { double :transaction2, date: '13/01/2012', credit: '%.2f' % 2000.00, debit: nil, before_balance: '%.2f' % 1000.00, after_balance: '%.2f' % 3000.00 }
+        let(:transaction3) { double :transaction3, date: '14/01/2012', credit: nil, debit: '%.2f' % 500.00, before_balance: '%.2f' % 3000.00, after_balance: '%.2f' % 2500.00 }
+        let(:transactions) { [transaction3, transaction2, transaction1] }
+        let(:subject) { Statement.new(transactions) }
+        
+        it "returns the output criteria" do
+            expect { puts subject.statementify }.to output("date || credit || debit || balance\n14/01/2012 ||  || 500.00 || 2500.00\n13/01/2012 || 2000.00 ||  || 3000.00\n10/01/2012 || 1000.00 ||  || 1000.00\n").to_stdout
         end
     end
 end

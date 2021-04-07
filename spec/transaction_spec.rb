@@ -11,18 +11,18 @@ let(:subject_negative) { Transaction.new(before_balance = 0, amount = -10) }
         end
 
         it "has a before balance" do
-            expect(subject.before_balance).to eq(0)
+            expect(subject.before_balance).to eq("0.00")
         end
 
         it "has an after balance" do
-            expect(subject.after_balance).to eq(10)
+            expect(subject.after_balance).to eq("10.00")
         end
     end
 
     context "converts amount to credit/debit accordingly" do
         context "+x amount of money" do
             it "if amount is +x, credit = x" do
-                expect(subject.credit).to eq(10)
+                expect(subject.credit).to eq("10.00")
             end
 
             it "if amount is +x, debit = """ do
@@ -32,7 +32,7 @@ let(:subject_negative) { Transaction.new(before_balance = 0, amount = -10) }
 
         context "-x amount of money" do
             it "if amount is -x, debit = x" do
-                expect(subject_negative.debit).to eq(10)
+                expect(subject_negative.debit).to eq("10.00")
             end
 
             it "if amount is -x, credit = """ do

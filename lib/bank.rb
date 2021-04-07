@@ -11,13 +11,13 @@ class Bank
 
     def deposit(money)
         raise "please enter a valid amount" unless valid?(money)
-        @transactions_list.push(Transaction.new(before_balance = @balance, amount = money))
+        @transactions_list.unshift(Transaction.new(before_balance = @balance, amount = money))
         @balance += money
     end
 
     def withdraw(money)
         raise "please enter a valid amount" unless valid?(money)
-        @transactions_list.push(Transaction.new(before_balance = @balance, amount = -money))
+        @transactions_list.unshift(Transaction.new(before_balance = @balance, amount = -money))
         @balance -= money
     end
 

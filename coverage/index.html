@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-07T16:17:06+01:00">2021-04-07T16:17:06+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-07T17:00:56+01:00">2021-04-07T17:00:56+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.66
+         4.55
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>145</b> relevant lines,
-    <span class="green"><b>145</b> lines covered</span> and
+    <b>153</b> relevant lines,
+    <span class="green"><b>153</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -88,7 +88,7 @@
             <td class="cell--number">10</td>
             <td class="cell--number">10</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">10.00</td>
+            <td class="cell--number">10.70</td>
             
           </tr>
         
@@ -106,9 +106,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#8b4968c07faff5bbac1d193409734cec6b85cd60" class="src_link" title="spec/bank_spec.rb">spec/bank_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">82</td>
-            <td class="cell--number">53</td>
-            <td class="cell--number">53</td>
+            <td class="cell--number">94</td>
+            <td class="cell--number">61</td>
+            <td class="cell--number">61</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.79</td>
             
@@ -329,7 +329,7 @@
 
             
 
-            <code class="ruby">        @transactions_list.push(Transaction.new(before_balance = @balance, amount = money))</code>
+            <code class="ruby">        @transactions_list.unshift(Transaction.new(before_balance = @balance, amount = money))</code>
           </li>
         </div>
       
@@ -395,7 +395,7 @@
 
             
 
-            <code class="ruby">        @transactions_list.push(Transaction.new(before_balance = @balance, amount = -money))</code>
+            <code class="ruby">        @transactions_list.unshift(Transaction.new(before_balance = @balance, amount = -money))</code>
           </li>
         </div>
       
@@ -640,8 +640,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="4">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="11" data-linenumber="4">
+            <span class="hits">11</span>
             
 
             
@@ -684,8 +684,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="8">
-            <span class="hits">13</span>
+          <li class="covered" data-hits="14" data-linenumber="8">
+            <span class="hits">14</span>
             
 
             
@@ -717,8 +717,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="58" data-linenumber="11">
-            <span class="hits">58</span>
+          <li class="covered" data-hits="62" data-linenumber="11">
+            <span class="hits">62</span>
             
 
             
@@ -794,8 +794,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="18">
-            <span class="hits">13</span>
+          <li class="covered" data-hits="14" data-linenumber="18">
+            <span class="hits">14</span>
             
 
             
@@ -930,7 +930,7 @@
 
             
 
-            <code class="ruby">        @before_balance = before_balance</code>
+            <code class="ruby">        @before_balance = &#39;%.2f&#39; % before_balance</code>
           </li>
         </div>
       
@@ -941,7 +941,7 @@
 
             
 
-            <code class="ruby">        @after_balance = before_balance + amount</code>
+            <code class="ruby">        @after_balance = &#39;%.2f&#39; % (before_balance + amount)</code>
           </li>
         </div>
       
@@ -985,7 +985,7 @@
 
             
 
-            <code class="ruby">            @credit = amount</code>
+            <code class="ruby">            @credit = &#39;%.2f&#39; % amount</code>
           </li>
         </div>
       
@@ -1007,7 +1007,7 @@
 
             
 
-            <code class="ruby">            @debit = -amount</code>
+            <code class="ruby">            @debit = &#39;%.2f&#39; % -amount</code>
           </li>
         </div>
       
@@ -1074,8 +1074,8 @@
     
 
     <div class="t-line-summary">
-      <b>53</b> relevant lines.
-      <span class="green"><b>53</b> lines covered</span> and
+      <b>61</b> relevant lines.
+      <span class="green"><b>61</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1951,7 +1951,7 @@
 
             
 
-            <code class="ruby">            expect { bank.statement }.to output(&quot;date || credit || debit || balance\n07/04/21 || 1000 ||  || 1000\n07/04/21 ||  || 200 || 800\n&quot;).to_stdout</code>
+            <code class="ruby">            expect { bank.statement }.to output(&quot;date || credit || debit || balance\n07/04/21 ||  || 200.00 || 800.00\n07/04/21 || 1000.00 ||  || 1000.00\n&quot;).to_stdout</code>
           </li>
         </div>
       
@@ -1979,6 +1979,138 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="82">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="83">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    context &quot;Acceptance Criteria&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="84">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        let(:transaction1) { double :transaction1, date: &#39;10/01/2012&#39;, credit: &#39;%.2f&#39; % 1000.00, debit: nil, before_balance: &#39;%.2f&#39; % 0.00, after_balance: &#39;%.2f&#39; % 1000.00 }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="85">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        let(:transaction2) { double :transaction2, date: &#39;13/01/2012&#39;, credit: &#39;%.2f&#39; % 2000.00, debit: nil, before_balance: &#39;%.2f&#39; % 1000.00, after_balance: &#39;%.2f&#39; % 3000.00 }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="86">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        let(:transaction3) { double :transaction3, date: &#39;14/01/2012&#39;, credit: nil, debit: &#39;%.2f&#39; % 500.00, before_balance: &#39;%.2f&#39; % 3000.00, after_balance: &#39;%.2f&#39; % 2500.00 }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="87">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        let(:transactions) { [transaction3, transaction2, transaction1] }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="88">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        let(:subject) { Statement.new(transactions) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="89">
+            
+            
+
+            
+
+            <code class="ruby">        </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="90">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        it &quot;returns the output criteria&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="91">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">            expect { puts subject.statementify }.to output(&quot;date || credit || debit || balance\n14/01/2012 ||  || 500.00 || 2500.00\n13/01/2012 || 2000.00 ||  || 3000.00\n10/01/2012 || 1000.00 ||  || 1000.00\n&quot;).to_stdout</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="92">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="93">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="94">
             
             
 
@@ -2563,7 +2695,7 @@
 
             
 
-            <code class="ruby">            expect(subject.before_balance).to eq(0)</code>
+            <code class="ruby">            expect(subject.before_balance).to eq(&quot;0.00&quot;)</code>
           </li>
         </div>
       
@@ -2607,7 +2739,7 @@
 
             
 
-            <code class="ruby">            expect(subject.after_balance).to eq(10)</code>
+            <code class="ruby">            expect(subject.after_balance).to eq(&quot;10.00&quot;)</code>
           </li>
         </div>
       
@@ -2684,7 +2816,7 @@
 
             
 
-            <code class="ruby">                expect(subject.credit).to eq(10)</code>
+            <code class="ruby">                expect(subject.credit).to eq(&quot;10.00&quot;)</code>
           </li>
         </div>
       
@@ -2794,7 +2926,7 @@
 
             
 
-            <code class="ruby">                expect(subject_negative.debit).to eq(10)</code>
+            <code class="ruby">                expect(subject_negative.debit).to eq(&quot;10.00&quot;)</code>
           </li>
         </div>
       

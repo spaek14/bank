@@ -3,14 +3,14 @@ class Transaction
 
     def initialize(before_balance, amount)
         @date = Time.now.strftime('%d/%m/%y')
-        @before_balance = before_balance
-        @after_balance = before_balance + amount
+        @before_balance = '%.2f' % before_balance
+        @after_balance = '%.2f' % (before_balance + amount)
         @credit = nil
         @debit = nil
         if amount.positive? 
-            @credit = amount
+            @credit = '%.2f' % amount
         elsif amount != 0
-            @debit = -amount
+            @debit = '%.2f' % -amount
         else raise "cannot process value of 0"
         end
     end
