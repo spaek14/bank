@@ -69,7 +69,7 @@ To run the tests, from the terminal, while in the directory, run:
 rspec -fd
 ```
 to see the tests pass.
-You should also be able to see the test coverage, which at the time of writing this is 99.3%!
+You should also be able to see the test coverage, which at the time of writing this is 100%!
 
 
 I decided to accept amounts of money to 2 decimal places, solely due to this mirroring the pound/pence convention in Pound Sterling. I also decided to not allow amounts of value 0, as I think that they would not be documented by users, and also due to the fact that the implementation would require further specification from the client that I do not have access to, in terms of formatting and display.
