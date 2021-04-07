@@ -6,23 +6,23 @@ class Bank
 
     def initialize
         @balance = 0
-        @transactions = []
+        @transactions_list = []
     end
 
     def deposit(money)
         raise "please enter a valid amount" unless valid?(money)
-        transactions.push(Transaction.new(before_balance = @balance, amount = money))
+        @transactions_list.push(Transaction.new(before_balance = @balance, amount = money))
         @balance += money
     end
 
     def withdraw(money)
         raise "please enter a valid amount" unless valid?(money)
-        transactions.push(Transaction.new(before_balance = @balance, amount = -money))
+        @transactions_list.push(Transaction.new(before_balance = @balance, amount = -money))
         @balance -= money
     end
 
     def statement
-        puts Statement.new(@transactions).statementify
+        puts Statement.new(@transactions_list).statementify
     end
 
 private

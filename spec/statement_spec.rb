@@ -7,28 +7,32 @@ describe Statement do
     let(:transaction4) { double :transaction4, date: '17/03/1998', credit: "", debit: 20.00, before_balance: 370.31, after_balance: 350.31 }
     let(:transactions) { [transaction1, transaction2, transaction3, transaction4] }
     let(:subject) { Statement.new(transactions) }
-
-    it "has column names" do
-        expect(subject.statementify.split("\n").first).to eq("date || credit || debit || balance")
+    
+    context "table" do
+        it "has column names" do
+            expect(subject.statementify.split("\n").first).to eq("date || credit || debit || balance")
+        end
     end
 
-    it "shows first transaction first" do
-        expect(subject.statementify.split("\n")[1]).to eq("14/03/1998 || 420.0 ||  || 420.0")
-    end
+    context "statementify method" do
+        it "shows first transaction first" do
+            expect(subject.statementify.split("\n")[1]).to eq("14/03/1998 || 420.0 ||  || 420.0")
+        end
 
-    it "shows second transaction second" do
-        expect(subject.statementify.split("\n")[2]).to eq("15/03/1998 ||  || 69.69 || 350.31")
-    end
+        it "shows second transaction second" do
+            expect(subject.statementify.split("\n")[2]).to eq("15/03/1998 ||  || 69.69 || 350.31")
+        end
 
-    it "shows third transaction third" do
-        expect(subject.statementify.split("\n")[3]).to eq("16/03/1998 || 20.0 ||  || 370.31")
-    end
+        it "shows third transaction third" do
+            expect(subject.statementify.split("\n")[3]).to eq("16/03/1998 || 20.0 ||  || 370.31")
+        end
 
-    it "shows fourth transaction fourth" do
-        expect(subject.statementify.split("\n")[4]).to eq("17/03/1998 ||  || 20.0 || 350.31")
-    end
+        it "shows fourth transaction fourth" do
+            expect(subject.statementify.split("\n")[4]).to eq("17/03/1998 ||  || 20.0 || 350.31")
+        end
 
-    it "shows all transactions correctly" do
-        expect(subject.statementify).to eq("date || credit || debit || balance\n14/03/1998 || 420.0 ||  || 420.0\n15/03/1998 ||  || 69.69 || 350.31\n16/03/1998 || 20.0 ||  || 370.31\n17/03/1998 ||  || 20.0 || 350.31")
+        it "shows all transactions correctly" do
+            expect(subject.statementify).to eq("date || credit || debit || balance\n14/03/1998 || 420.0 ||  || 420.0\n15/03/1998 ||  || 69.69 || 350.31\n16/03/1998 || 20.0 ||  || 370.31\n17/03/1998 ||  || 20.0 || 350.31")
+        end
     end
 end
