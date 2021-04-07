@@ -31,7 +31,6 @@ private
         money_int = money.is_a? Integer
         money_float = money.is_a? Float
         money_float_valid = money.to_s.split(".").last.length <= 2
-
         money_int || money_float && money_float_valid
     end
 end

@@ -26,7 +26,7 @@ let(:subject_negative) { Transaction.new(before_balance = 0, amount = -10) }
             end
 
             it "if amount is +x, debit = """ do
-                expect(subject.debit).to eq("")
+                expect(subject.debit).to eq(nil)
             end
         end
 
@@ -36,7 +36,7 @@ let(:subject_negative) { Transaction.new(before_balance = 0, amount = -10) }
             end
 
             it "if amount is -x, credit = """ do
-                expect(subject_negative.credit).to eq("")
+                expect(subject_negative.credit).to eq(nil)
             end
         end
         

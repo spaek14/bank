@@ -12,6 +12,10 @@ describe Statement do
         it "has column names" do
             expect(subject.statementify.split("\n").first).to eq("date || credit || debit || balance")
         end
+
+        it "returns just the names if transactions is empty" do
+            expect(Statement.new(transactions = []).statementify).to eq("date || credit || debit || balance")
+        end
     end
 
     context "statementify method" do

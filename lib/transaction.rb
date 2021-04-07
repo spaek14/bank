@@ -5,8 +5,8 @@ class Transaction
         @date = Time.now.strftime('%d/%m/%y')
         @before_balance = before_balance
         @after_balance = before_balance + amount
-        @credit = ""
-        @debit = ""
+        @credit = nil
+        @debit = nil
         if amount.positive? 
             @credit = amount
         elsif amount != 0
