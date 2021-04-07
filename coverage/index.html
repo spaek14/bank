@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-07T17:00:56+01:00">2021-04-07T17:00:56+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-07T17:06:44+01:00">2021-04-07T17:06:44+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1951,7 +1951,7 @@
 
             
 
-            <code class="ruby">            expect { bank.statement }.to output(&quot;date || credit || debit || balance\n07/04/21 ||  || 200.00 || 800.00\n07/04/21 || 1000.00 ||  || 1000.00\n&quot;).to_stdout</code>
+            <code class="ruby">            expect { bank.statement }.to output(&quot;date || credit || debit || balance\n#{Time.now.strftime(&#39;%d/%m/%y&#39;)} ||  || 200.00 || 800.00\n07/04/21 || 1000.00 ||  || 1000.00\n&quot;).to_stdout</code>
           </li>
         </div>
       

@@ -76,7 +76,7 @@ let(:bank) { Bank.new }
             bank = Bank.new
             bank.deposit(1000)
             bank.withdraw(200)
-            expect { bank.statement }.to output("date || credit || debit || balance\n07/04/21 ||  || 200.00 || 800.00\n07/04/21 || 1000.00 ||  || 1000.00\n").to_stdout
+            expect { bank.statement }.to output("date || credit || debit || balance\n#{Time.now.strftime('%d/%m/%y')} ||  || 200.00 || 800.00\n07/04/21 || 1000.00 ||  || 1000.00\n").to_stdout
         end
     end
 
