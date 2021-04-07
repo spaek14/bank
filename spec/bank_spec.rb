@@ -71,5 +71,12 @@ let(:bank) { Bank.new }
         it "returns the correct statement to be puts-ed" do
             expect(Statement.new(transactions_list).statementify).to eq("date || credit || debit || balance\n14/03/1998 || 420.0 ||  || 420.0\n15/03/1998 ||  || 69.69 || 350.31\n16/03/1998 || 20.0 ||  || 370.31\n17/03/1998 ||  || 20.0 || 350.31")
         end
+        
+        it "puts-es the correct thing" do
+            bank = Bank.new
+            bank.deposit(1000)
+            bank.withdraw(200)
+            expect { bank.statement }.to output("date || credit || debit || balance\n07/04/21 || 1000 ||  || 1000\n07/04/21 ||  || 200 || 800\n").to_stdout
+        end
     end
 end
