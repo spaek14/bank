@@ -15,19 +15,10 @@ describe Statement do
     end
 
     context "statementify method" do
-        it "shows first transaction first" do
+        it "shows nth transaction nth" do
             expect(subject.statementify.split("\n")[1]).to eq("14/03/1998 || 420.0 ||  || 420.0")
-        end
-
-        it "shows second transaction second" do
             expect(subject.statementify.split("\n")[2]).to eq("15/03/1998 ||  || 69.69 || 350.31")
-        end
-
-        it "shows third transaction third" do
             expect(subject.statementify.split("\n")[3]).to eq("16/03/1998 || 20.0 ||  || 370.31")
-        end
-
-        it "shows fourth transaction fourth" do
             expect(subject.statementify.split("\n")[4]).to eq("17/03/1998 ||  || 20.0 || 350.31")
         end
 

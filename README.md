@@ -58,3 +58,15 @@ Print your bank statement:
 ```
 bank.statement
 ```
+
+In order to install the code, fork this repo and pull it to a local directory. Then, run the following:
+```
+bundle install
+```
+to install the relevant gems. 
+To run the tests, from the terminal, while in the directory, run:
+```
+rspec -fd
+```
+to see the tests pass.
+You should also be able to see the test coverage, which at the time of writing this is 98.26%!
