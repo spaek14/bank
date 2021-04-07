@@ -1,19 +1,31 @@
+require "./lib/transaction.rb"
+require "./lib/statement.rb"
+
 class Bank
-    attr_reader :balance
+    attr_reader :balance, :transactions
 
     def initialize
         @balance = 0
+        @transactions = []
     end
 
     def deposit(money)
         raise "please enter a valid amount" unless valid?(money)
+        transactions.push(Transaction.new(before_balance = @balance, amount = money))
         @balance += money
     end
 
     def withdraw(money)
         raise "please enter a valid amount" unless valid?(money)
+        transactions.push(Transaction.new(before_balance = @balance, amount = -money))
         @balance -= money
     end
+
+    def statement
+        puts Statement.new(@transactions).statementify
+    end
+
+private
 
     def valid?(money)
         money_int = money.is_a? Integer

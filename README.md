@@ -36,3 +36,25 @@ I would like to be able to make a withrawal.
 As a customer,
 So that I can track my finances,
 I want to be able to request account statements.
+```
+
+In order to run this app, load the runner.rb file by inputting the following, when in the app directory:
+```
+irb -r "./lib/runner.rb"
+```
+Create an instance of the Bank class:
+```
+bank = Bank.new
+```
+Deposit x amount of money:
+```
+bank.deposit(x)
+```
+Withdraw x amount of money:
+```
+bank.withdraw(x)
+```
+Print your bank statement:
+```
+bank.statement
+```
